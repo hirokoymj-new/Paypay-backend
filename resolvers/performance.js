@@ -25,9 +25,6 @@ module.exports = {
   Mutation: {
     createPerformance: async (_, { input }) => {
       try {
-        console.log("CreatePerformance");
-        console.log({ ...input });
-        // const employee = await Employee.findById(input.employee);
         const employee = await Employee.findById(input.employee);
 
         console.log(employee);
