@@ -16,12 +16,14 @@ module.exports = gql`
     firstName: String!
     lastName: String!
     email: String!
+    title: String
   }
 
   input updateEmployeeInput {
     firstName: String
     lastName: String
     email: String
+    title: String
   }
 
   type Employee {
@@ -29,6 +31,7 @@ module.exports = gql`
     firstName: String!
     lastName: String!
     email: String!
+    title: String
     performances: [Performance]
     createdAt: Date!
     updatedAt: Date!

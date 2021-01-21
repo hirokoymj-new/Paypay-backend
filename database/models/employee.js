@@ -14,6 +14,10 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: false,
+    },
     performances: [
       {
         type: mongoose.Schema.Types.ObjectId,
