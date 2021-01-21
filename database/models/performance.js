@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const performanceSchema = new mongoose.Schema(
   {
+    title: {
+      type: String,
+      required: false,
+    },
     teamPlayer: {
       type: String,
       required: false,

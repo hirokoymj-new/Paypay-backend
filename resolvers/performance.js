@@ -3,9 +3,11 @@ const Performance = require("../database/models/performance");
 
 module.exports = {
   Query: {
-    performances: async (_) => {
+    performances: async (_, { employeeId }) => {
       try {
-        const performances = await Performance.find();
+        const performances = await Performance.find(
+          employeeId ? { employee: employeeId } : {}
+        );
         return performances;
       } catch (error) {
         console.log(error);
@@ -25,6 +27,7 @@ module.exports = {
   Mutation: {
     createPerformance: async (_, { input }) => {
       try {
+        console.log({ ...input });
         const employee = await Employee.findById(input.employee);
 
         console.log(employee);

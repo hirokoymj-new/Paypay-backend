@@ -5,7 +5,7 @@ module.exports = {
   Query: {
     employees: async (_) => {
       try {
-        const employee = await Employee.find();
+        const employee = await Employee.find().sort({ _id: -1 });
         return employee;
       } catch (error) {
         console.log(error);

@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 module.exports = gql`
   extend type Query {
-    performances: [Performance]
+    performances(employeeId: ID): [Performance]
     performance(id: ID!): Performance
   }
 
@@ -19,14 +19,16 @@ module.exports = gql`
   }
 
   input createPerformanceInput {
+    title: String!
+    employee: ID!
+    evaluator: ID!
     teamPlayer: Score
     communication: Score
     comment: String
-    employee: ID!
-    evaluator: ID!
   }
 
   input updatePerformanceInput {
+    title: String
     teamPlayer: Score
     communication: Score
     comment: String
@@ -34,11 +36,12 @@ module.exports = gql`
 
   type Performance {
     id: ID!
+    title: String!
+    employee: Employee!
+    evaluator: Employee!
     teamPlayer: Score
     communication: Score
     comment: String
-    employee: Employee!
-    evaluator: Employee!
     createdAt: Date!
     updatedAt: Date!
   }
