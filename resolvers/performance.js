@@ -70,7 +70,7 @@ module.exports = {
       return employee;
     },
     evaluator: async (parent) => {
-      const employee = await Employee.findById(parent.employee);
+      const employee = await Employee.findById(parent.evaluator);
       return employee;
     },
   },
