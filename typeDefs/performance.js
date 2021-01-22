@@ -29,6 +29,8 @@ module.exports = gql`
 
   input updatePerformanceInput {
     title: String
+    employee: ID
+    evaluator: ID
     teamPlayer: Score
     communication: Score
     comment: String
