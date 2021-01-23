@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 const employeeTypeDefs = require("./employee");
 const performanceTypeDefs = require("./performance");
+const feedbackTypeDefs = require("./feedback");
 
 const typeDefs = gql`
   scalar Date
@@ -14,4 +15,9 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = [typeDefs, employeeTypeDefs, performanceTypeDefs];
+module.exports = [
+  typeDefs,
+  employeeTypeDefs,
+  performanceTypeDefs,
+  feedbackTypeDefs,
+];

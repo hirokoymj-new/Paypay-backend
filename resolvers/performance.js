@@ -1,5 +1,6 @@
 const Employee = require("../database/models/employee");
 const Performance = require("../database/models/performance");
+const Feedback = require("../database/models/feedback");
 
 module.exports = {
   Query: {
@@ -72,6 +73,10 @@ module.exports = {
     evaluator: async (parent) => {
       const employee = await Employee.findById(parent.evaluator);
       return employee;
+    },
+    feedbacks: async (parent) => {
+      const performances = await Feedback.find({ id: parent.performance });
+      return performances;
     },
   },
 };

@@ -44,6 +44,7 @@ module.exports = gql`
     teamPlayer: Score
     communication: Score
     comment: String
+    feedbacks: [Feedback]
     createdAt: Date!
     updatedAt: Date!
   }

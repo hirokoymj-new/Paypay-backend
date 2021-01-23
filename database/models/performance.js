@@ -26,6 +26,12 @@ const performanceSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Employee",
     },
+    feedbacks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Feedback",
+      },
+    ],
   },
   {
     timestamps: true,
