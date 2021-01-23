@@ -13,9 +13,9 @@ module.exports = gql`
   }
 
   enum Score {
-    excellent
-    good
-    bad
+    EXCELLENT
+    GOOD
+    BAD
   }
 
   input createPerformanceInput {
