@@ -20,5 +20,7 @@ module.exports = gql`
     performance: Performance!
     name: String!
     comment: String
+    createdAt: Date!
+    updatedAt: Date!
   }
 `;
