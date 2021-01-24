@@ -22,6 +22,15 @@ module.exports = {
         throw error;
       }
     },
+    performanceByEmployee: async (_, { eid }) => {
+      try {
+        const performances = await Performance.find({ employee: eid });
+        return performances;
+      } catch (error) {
+        console.log(error);
+        throw error;
+      }
+    },
   },
   Mutation: {
     createPerformance: async (_, { input }) => {

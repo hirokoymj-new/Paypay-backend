@@ -4,6 +4,7 @@ module.exports = gql`
   extend type Query {
     performances: [Performance!]
     performance(id: ID!): Performance
+    performanceByEmployee(eid: ID!): [Performance!]
   }
 
   extend type Mutation {
