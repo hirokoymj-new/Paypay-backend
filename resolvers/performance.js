@@ -4,11 +4,9 @@ const Feedback = require("../database/models/feedback");
 
 module.exports = {
   Query: {
-    performances: async (_, { employeeId }) => {
+    performances: async (_) => {
       try {
-        const performances = await Performance.find(
-          employeeId ? { employee: employeeId } : {}
-        );
+        const performances = await Performance.find();
         return performances;
       } catch (error) {
         console.log(error);
@@ -31,7 +29,6 @@ module.exports = {
         console.log({ ...input });
         const employee = await Employee.findById(input.employee);
 
-        console.log(employee);
         const performance = new Performance({ ...input });
         const result = await performance.save();
         employee.performances.push(result.id);
@@ -74,8 +71,10 @@ module.exports = {
       const employee = await Employee.findById(parent.evaluator);
       return employee;
     },
-    feedbacks: async (parent) => {
-      const performances = await Feedback.find({ id: parent.performance });
+    feedbacks: async ({ id }) => {
+      const performances = await Feedback.find({
+        performance: id,
+      });
       return performances;
     },
   },
