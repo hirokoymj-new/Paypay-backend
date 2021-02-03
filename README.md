@@ -14,6 +14,4 @@ https://paypay-backend.herokuapp.com/
 - Performance
 - Feedback
 
-> Employee and Performance collections have a **one to many** relationship. Performance and Feedback collections have a **one to many** relationship.
-
 ![](diagram.png)
