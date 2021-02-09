@@ -6,7 +6,11 @@ const feedbackTypeDefs = require("./feedback");
 
 const typeDefs = gql`
   scalar Date
-
+  enum AllowedColor {
+    RED
+    GREEN
+    BLUE
+  }
   type Query {
     _: String
   }
